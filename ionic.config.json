@@ -1,0 +1,7 @@
+{
+  "name": "periodictableplusplus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
