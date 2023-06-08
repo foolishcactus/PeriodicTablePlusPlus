@@ -2,12 +2,14 @@ import { Component, Input, inject} from '@angular/core';
 import { ElementP } from '../elements';
 import { CommonModule } from '@angular/common';
 import { ElementService } from '../elements.service';
+import { WheelDirective } from '../wheel.directive';
+
 
 @Component({
   selector: 'app-element',
   template: `
 
-    <div #myIdentifier class = "element h-full w-full" [ngStyle] = "{
+    <div appWheel class = "element h-full w-full" [ngStyle] = "{
       'background-color': this.elementService.getColor(element), 
       'border': '0.1px solid rgb(251,247,245)',
       'max-height': '100%',
@@ -29,7 +31,7 @@ import { ElementService } from '../elements.service';
     `,
   styleUrls: ['./element.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, WheelDirective],
 })
 
 export class ElementComponent{

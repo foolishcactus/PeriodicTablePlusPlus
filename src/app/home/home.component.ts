@@ -1,8 +1,9 @@
-import { Component, OnInit, inject, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ElementComponent} from '../element/element.component';
 import {ElementService} from '../elements.service';
 import {ElementP} from '../elements';
+import { WheelDirective } from '../wheel.directive';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ import {ElementP} from '../elements';
       <div class = "periodContainer" *ngFor = "let period of periods; let i = index" [ngStyle] = "{'grid-row-start': i + 1}">
         <ng-container *ngFor = "let group of groups">
 
-        <app-element #elementIdentifier 
+        <app-element
         *ngIf = "elementExists(period, group); else emptyDivElement" 
         class = "elements hoverControl w-full h-full" 
         [element] = "this.elementService.getElement(period, group)" 
@@ -31,11 +32,13 @@ import {ElementP} from '../elements';
 
         </ng-container> 
       </div>
+      <input appWheel type="text" value="Ctrl + mouse scroll wheel" />
+
     </div>
   </div>
   `,
   styleUrls: ['./home.component.scss'],
-  imports: [CommonModule, ElementComponent]
+  imports: [CommonModule, ElementComponent, WheelDirective]
 })
 export class HomeComponent  implements OnInit {
   elementList: ElementP[] = [];
