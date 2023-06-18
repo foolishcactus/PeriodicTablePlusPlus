@@ -17,31 +17,14 @@
     max-height: 66.6667vh;
 }
 
-.periodContainer{
-    display: flex;
-    height: 7.4074vh;
-    max-height: 7.4074vh;
+.fullScreenElement{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    width: 80vw;
+    max-width: 80vw;
+    height: 66.6667vh;
+    max-height: 66.6667vh;
 }
-
-.fillerDiv{
-    transition: 0.75s ease-in-out;
-    width: 4.444444vw;
-    max-width: 4.444444vw;
-    height: 7.4074vh;
-    max-height: 7.4074vh;
-    flex: 1;
+p{
+    color: white;
 }
-
-.elements{
-    transition: 0.75s ease-in-out;
-    width: 4.444444vw;
-    height: 7.4074vh;
-    max-height: 7.4074vh;
-    flex: 1;
-}
-
-.elements:hover{
-    flex-grow: 5;
-}
-
-

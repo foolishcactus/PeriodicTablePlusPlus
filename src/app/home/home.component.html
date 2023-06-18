@@ -1,1 +1,19 @@
+<div class = "appgrid w-full h-full">
+    
+    <app-element-fullscreen appWheel class = "fullScreenElement"
+      @zoomIn @zoomOut
+      (wheelScrollData) = handleWheelScrollData($event)
+      *ngIf = "this.enableFullScreenElement"
+      [element] = this.fullScreenElement
+    ></app-element-fullscreen>
 
+    
+      <app-table class = "tableContainer" (wheelScrollData) = handleWheelScrollData($event) 
+      *ngIf = "!this.enableFullScreenElement"
+      ></app-table> 
+    
+
+    <div class = "temp"
+    *ngIf = "this.enableFullScreenElement"
+    >WHATS GOODy</div>
+  </div>

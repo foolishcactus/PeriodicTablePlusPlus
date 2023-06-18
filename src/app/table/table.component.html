@@ -1,0 +1,20 @@
+
+  <div class = "periodContainer" *ngFor = "let period of periods; let i = index" [ngStyle] = "{'grid-row-start': i + 1}">
+    <ng-container *ngFor = "let group of groups">
+  
+    <app-element
+    appWheel
+    (wheelScroll) = "handleElementScroll($event, period, group)"
+    *ngIf = "elementExists(period, group); else emptyDivElement" 
+    class = "elements hoverControl w-full h-full" 
+    [element] = "this.elementService.getElement(period, group)" 
+    >
+    </app-element>
+  
+    <ng-template  #emptyDivElement>
+      <div class = "fillerDiv"></div>
+    </ng-template>
+  
+    </ng-container> 
+  </div>
+

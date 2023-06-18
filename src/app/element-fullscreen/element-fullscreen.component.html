@@ -1,0 +1,12 @@
+<div appWheel
+(wheelScroll) = handleWheelScroll($event)
+[ngStyle] = "{
+  'background-color': this.elementService.getColor(element), 
+  'border': '2px white'
+}">
+    <div>
+      <p>{{this.element.atomicnumber}}</p>
+      <h1>{{this.element.symbol}}</h1>
+    </div>
+  
+</div>

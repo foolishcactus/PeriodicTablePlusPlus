@@ -1,33 +1,32 @@
-import { Directive, HostListener} from '@angular/core';
+import { Directive, HostListener, Output, EventEmitter} from '@angular/core';
 
 @Directive({
   selector: '[appWheel]',
   standalone: true,
 })
 
-export class WheelDirective {
+export class WheelDirective{
+  //output that stores either true or false. can be accessed from parent components
+  @Output() wheelScroll = new EventEmitter<boolean>();
 
-  private i: number = 1;
-  private range: number = 0.5;
+  constructor() {}
 
-  constructor() { }
 
+  //listens if the mouseleaves then returns false
+  @HostListener('mouseout', ['$event']) mouseout(event){
+      this.wheelScroll.emit(false);
+  }
+  //listes to mouse scroll wheel event
   @HostListener("mousewheel", ["$event"]) onMousewheel(event) {
-
-      event.preventDefault();
+    //prevents the default mouse zooming action done by browsers
+    event.preventDefault();
+      //if zooming in action then emits true
       if (event.wheelDelta > 0) {
-        event.srcElement.style.setProperty("transition", "all 200ms ease-in");
-        event.srcElement.style.setProperty(
-          "transform",
-          `scale(${this.i + this.range})`
-        );
-      }
+        this.wheelScroll.emit(true);
+      }  
+      //if zooming out action then emits false
       if (event.wheelDelta < 0) {
-        event.srcElement.style.setProperty("transition", "all 200ms ease-out");
-        event.srcElement.style.setProperty(
-          "transform",
-          `scale(${this.i - this.range})`
-        );
+       this.wheelScroll.emit(false);
       }
   }
 }
