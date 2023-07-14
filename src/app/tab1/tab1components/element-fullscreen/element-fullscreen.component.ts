@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, inject, Output, EventEmitter} from '@angular/core';
-import { ElementP } from '../elements';
-import {ElementService} from '../elements.service';
+import { ElementP } from '../../../elements';
+import {ElementService} from '../../../elements.service';
 import { CommonModule } from '@angular/common';
-import { WheelDirective } from '../wheel.directive';
+import { WheelDirective } from '../../../wheel.directive';
 import { zoomIn,zoomOut } from 'src/app/animations';
 
 @Component({

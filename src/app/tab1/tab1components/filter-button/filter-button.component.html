@@ -1,0 +1,5 @@
+<ion-list lines = "full">
+      <ion-item *ngFor = "let filter of this.filterService.getFilters()">
+        <ion-checkbox justify = "start" label-placement="start" [(ngModel)] = "filter.isChecked" (click) = "handleFilterClick(filter)">{{filter.filter}}</ion-checkbox>
+      </ion-item>
+</ion-list>

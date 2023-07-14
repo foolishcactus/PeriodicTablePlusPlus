@@ -1,9 +1,9 @@
 import { Component, OnInit, inject, Output, EventEmitter } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ElementComponent} from '../element/element.component';
-import {ElementService} from '../elements.service';
-import {ElementP} from '../elements';
-import { WheelDirective } from '../wheel.directive';
+import {ElementService} from '../../../elements.service';
+import {ElementP} from '../../../elements';
+import { WheelDirective } from '../../../wheel.directive';
 
 @Component({
   selector: 'app-table',

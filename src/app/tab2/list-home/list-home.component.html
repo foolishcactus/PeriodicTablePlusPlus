@@ -1,0 +1,22 @@
+<div class="container w-full h-full">
+
+  <div class="searchBar">
+    <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
+  </div>
+
+  <div class="elementList" *ngIf="(this.elementService.getAllElements() | filter: searchText).length > 0; else noResults" >
+
+    
+      <div class = "element" *ngFor="let element of this.elementService.getAllElements() | filter: searchText; let i = index" [ngStyle] = "{
+        'background-color': this.elementService.getColor(element), 
+        'border': '0.1px solid rgb(251,247,245)',
+        }">
+          <p>{{element.name}}, {{element.type}}, {{element.state}}, {{element.discoverer}}, {{element.discoveryYear}} </p>
+      </div>
+    
+  </div>
+
+  <ng-template #noResults>
+    <p>No results found for "{{searchText}}".</p>
+  </ng-template>
+</div>

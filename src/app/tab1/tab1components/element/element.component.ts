@@ -1,8 +1,8 @@
 import { Component, Input, inject, OnInit, OnChanges} from '@angular/core';
-import { ElementP } from '../elements';
+import { ElementP } from '../../../elements';
 import { CommonModule } from '@angular/common';
-import { ElementService } from '../elements.service';
-import { WheelDirective } from '../wheel.directive';
+import { ElementService } from '../../../elements.service';
+import { WheelDirective } from '../../../wheel.directive';
 import { ElementFullscreenComponent } from '../element-fullscreen/element-fullscreen.component';
 
 

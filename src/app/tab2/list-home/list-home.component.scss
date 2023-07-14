@@ -1,0 +1,31 @@
+.container{
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.elementList{
+    overflow-y:auto;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    width: 80vw;
+    max-width: 80vw;
+    height: 66.6667vh;
+    max-height: 66.6667vh;
+}
+
+ .searchBar{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 10vh;
+    height: 3vh;
+ }
+
+.element{
+    height: 7.4074vh;
+    max-width: 7.4074vh;
+    width: 79vw;
+    max-width: 79vw;
+}

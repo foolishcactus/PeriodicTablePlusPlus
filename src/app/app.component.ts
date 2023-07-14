@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './tab1/tab1components/home/home.component';
 
 @Component({
   selector: 'app-root',

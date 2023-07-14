@@ -1,4 +1,10 @@
 <div class = "appgrid w-full h-full">
+
+ 
+      <ion-button class = "filterButton" (click)="showPopover($event)">
+        <ion-icon  name="funnel-outline"></ion-icon>
+      </ion-button>
+  
     
     <app-element-fullscreen appWheel class = "fullScreenElement"
       @zoomIn @zoomOut
@@ -11,9 +17,4 @@
       <app-table class = "tableContainer" (wheelScrollData) = handleWheelScrollData($event) 
       *ngIf = "!this.enableFullScreenElement"
       ></app-table> 
-    
-
-    <div class = "temp"
-    *ngIf = "this.enableFullScreenElement"
-    >WHATS GOODy</div>
-  </div>
+</div>
